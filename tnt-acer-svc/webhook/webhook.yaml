@@ -1,0 +1,15 @@
+apiVersion: webhookconfig.keptn.sh/v1alpha1
+kind: WebhookConfig
+metadata:
+  name: webhook-configuration
+spec:
+  webhooks:
+    - type: sh.keptn.event.evaluation.finished
+      requests:
+        - curl --request POST --data
+          '{"channel":"https://automagichq.slack.com/services/BKQC7SKLY","text":"{{.data.project}}
+          has {{.data.evaluation.result}} with
+          score{{.data.evaluation.score}}"}'
+          https://slack.com/api/chat.postMessage
+      subscriptionID: c9889924-1661-4780-9e78-16d5ba55f57e
+      sendFinished: false
