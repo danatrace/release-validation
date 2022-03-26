@@ -1,0 +1,21 @@
+apiVersion: webhookconfig.keptn.sh/v1alpha1
+kind: WebhookConfig
+metadata:
+  name: webhook-configuration
+spec:
+  webhooks:
+    - type: sh.keptn.event.evaluation.finished
+      requests:
+        - "curl --header 'Content-type: application/json' --header
+          'Authorization: {{.env.secret_slack_token}}' --request POST --data
+          '{\"text\":\"{{.data.project}} has {{.data.evaluation.result}} with
+          score{{.data.evaluation.score}}\"}'
+          https://hooks.slack.com/services/TJABTKC0G/B033BUD3BFG/T4JkkdgpbK8H20\
+          bsKvdE4upG"
+      envFrom:
+        - name: secret_slack_token
+          secretRef:
+            name: slack
+            key: token
+      subscriptionID: c9889924-1661-4780-9e78-16d5ba55f57e
+      sendFinished: false
