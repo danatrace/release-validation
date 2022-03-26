@@ -4,4 +4,6 @@ metadata:
   name: "shipyard-quality-gate"
 spec:
   stages:
+    - name: "dev"
+    - name: "staging"
     - name: "production"
