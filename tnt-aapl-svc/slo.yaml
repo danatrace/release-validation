@@ -97,7 +97,7 @@ objectives:
   displayName: ""
   pass:
   - criteria:
-    - <=0
+    - <=0.5
   warning:
   - criteria:
     - <1
