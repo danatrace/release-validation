@@ -67,7 +67,7 @@ objectives:
   displayName: ""
   pass:
   - criteria:
-    - <1500
+    - <500
   warning: []
   weight: 1
   key_sli: false
@@ -95,7 +95,7 @@ objectives:
   displayName: ""
   pass:
   - criteria:
-    - <=0
+    - <=0.5
   warning:
   - criteria:
     - <1
@@ -107,16 +107,6 @@ objectives:
   warning: []
   weight: 1
   key_sli: false
-- sli: Availability_of_acer
-  displayName: ""
-  pass:
-  - criteria:
-    - '>=99.000000'
-  warning:
-  - criteria:
-    - '>=95.000000'
-  weight: 1
-  key_sli: false
 - sli: problems
   displayName: ""
   pass:
@@ -125,16 +115,6 @@ objectives:
   warning: []
   weight: 1
   key_sli: true
-- sli: Performance_SLO_of_acer
-  displayName: ""
-  pass:
-  - criteria:
-    - '>=90.000000'
-  warning:
-  - criteria:
-    - '>=85.000000'
-  weight: 1
-  key_sli: false
 total_score:
   pass: 90%
   warning: 70%
